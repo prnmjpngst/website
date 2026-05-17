@@ -208,26 +208,22 @@ header {
   }
 }
 
-/* Menargetkan komponen mobile-toc bawaan Starlight */
 @media (max-width: 50rem) { 
-  starlight-toc .mobile-toc {
-    position: fixed;
-    bottom: 1rem; /* Jarak dari bawah layar */
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 2rem); /* Lebar fleksibel dengan margin kanan-kiri */
-    max-width: 400px; /* Batas lebar maksimal agar tidak terlalu melar */
-    z-index: 100; /* Memastikan komponen berada di atas konten lain */
-    
-    /* Opsional: Memberikan bayangan dan sudut tumpul agar estetika floating lebih terasa */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 0.5rem;
-    overflow: hidden;
+  /* Kita tambahkan detail selektor agar lebih kuat */
+  body starlight-toc .mobile-toc {
+    position: fixed !important;
+    bottom: 1rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 400px !important;
+    z-index: 1000 !important; /* Naikkan z-index untuk memastikan berada paling depan */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
   }
 
-  /* Menyesuaikan tombol pemicu internal agar pas dengan container barunya */
-  starlight-toc summary {
-    border-radius: 0.5rem;
+  body starlight-toc summary {
+    border-radius: 0.5rem !important;
   }
 }
-
