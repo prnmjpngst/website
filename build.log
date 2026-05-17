@@ -1,0 +1,36 @@
+
+> website@0.0.1 build
+> astro build
+
+14.13.40 [content] Syncing content
+14.13.40 [content] Synced content
+14.13.40 [types] Generated 1.27s
+14.13.40 [build] output: "static"
+14.13.40 [build] mode: "static"
+14.13.40 [build] directory: /home/purnomo/document/website/dist/
+14.13.40 [build] Collecting build info...
+14.13.40 [build] ✓ Completed in 1.53s.
+14.13.40 [build] Building static entrypoints...
+14.13.45 [vite] ✓ built in 5.23s
+14.13.46 [vite] ✓ built in 511ms
+14.13.46 [build] Rearranging server assets...
+
+ generating static routes 
+14.13.46   ├─ /404.htmlEntry docs → 404 was not found.
+ (+41ms) 
+14.13.46   ├─ /faq/index.html (+39ms) 
+14.13.46   ├─ /istilah/index.html (+18ms) 
+14.13.46   ├─ /panduan/index.html (+17ms) 
+14.13.46   ├─ /regulasi/index.html (+18ms) 
+14.13.46   ├─ /index.html (+16ms) 
+14.13.46   ├─ /panduan/apa-itu-kir/index.html (+16ms) 
+14.13.46   ├─ /panduan/kendaraan-wajib-uji-kir/index.html (+13ms) 
+14.13.46 ✓ Completed in 266ms.
+
+14.13.46 [build] ✓ Completed in 6.11s.
+14.13.46 [starlight:pagefind] Building search index with Pagefind...
+14.13.46 [starlight:pagefind] Found 8 HTML files.
+14.13.46 [starlight:pagefind] Finished building search index in 47ms.
+14.13.46 [WARN] [@astrojs/sitemap] The Sitemap integration requires the `site` astro.config option. Skipping.
+14.13.46 [build] 8 page(s) built in 7.69s
+14.13.46 [build] Complete!

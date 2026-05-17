@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+const docs = await getCollection('docs');
+
+const regulasi = docs.filter((item) =>
+  item.id.startsWith('regulasi/')
+);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Regulasi',
+  }}
+>
+  <ul>
+    {
+      regulasi.map((item) => (
+        <li>
+          <a href={`/${item.id.replace('.mdx', '')}/`}>
+            {item.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</StarlightPage>

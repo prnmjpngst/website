@@ -1,0 +1,119 @@
+---
+import { getCollection } from 'astro:content';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+const docs = await getCollection('docs');
+
+const panduan = docs
+  .filter((item) => item.id.startsWith('panduan/'))
+  .slice(0, 4);
+
+const regulasi = docs
+  .filter((item) => item.id.startsWith('regulasi/'))
+  .slice(0, 4);
+
+const faq = docs
+  .filter((item) => item.id.startsWith('faq/'))
+  .slice(0, 4);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Panduan KIR',
+    description: 'Panduan praktis uji berkala kendaraan bermotor',
+    template: 'splash',
+
+    hero: {
+      title: 'Panduan KIR Kendaraan',
+      tagline:
+        'Catatan dan panduan praktis seputar uji berkala kendaraan bermotor.',
+    },
+  }}
+>
+  <div class="home-section">
+    <h2>Panduan</h2>
+
+    <ul class="home-links">
+      {
+        panduan.map((item) => (
+          <li>
+            <a href={`/${item.id.replace('.mdx', '')}/`}>
+              {item.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a class="more-link" href="/panduan/">
+      Selengkapnya →
+    </a>
+  </div>
+
+  <hr />
+
+  <div class="home-section">
+    <h2>Regulasi</h2>
+
+    <ul class="home-links">
+      {
+        regulasi.map((item) => (
+          <li>
+            <a href={`/${item.id.replace('.mdx', '')}/`}>
+              {item.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a class="more-link" href="/regulasi/">
+      Selengkapnya →
+    </a>
+  </div>
+
+  <hr />
+
+  <div class="home-section">
+    <h2>FAQ</h2>
+
+    <ul class="home-links">
+      {
+        faq.map((item) => (
+          <li>
+            <a href={`/${item.id.replace('.mdx', '')}/`}>
+              {item.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a class="more-link" href="/faq/">
+      Selengkapnya →
+    </a>
+  </div>
+
+  <hr />
+
+  <div class="home-section">
+    <h2>Tentang Website Ini</h2>
+
+    <p>
+      Panduan KIR dibuat sebagai catatan dan panduan praktis
+      seputar uji berkala kendaraan bermotor.
+    </p>
+
+    <p>
+      Website ini berisi penjelasan sederhana mengenai regulasi,
+      prosedur, dan istilah yang sering digunakan dalam pengujian
+      kendaraan, dengan pendekatan yang lebih mudah dipahami
+      oleh masyarakat umum.
+    </p>
+
+    <p>
+      Beberapa pembahasan juga dilengkapi dengan dasar regulasi
+      serta catatan praktis berdasarkan pengalaman di lapangan.
+    </p>
+  </div>
+</StarlightPage>
