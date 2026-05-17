@@ -2,17 +2,15 @@
 
 set -e
 
-echo "Building website..."
+cd ~/document/website
 
-if npm run build > build.log 2>&1; then
-    echo "Build sukses"
-else
-    echo "Build gagal"
-    tail -n 20 build.log
-    exit 1
-fi
+echo "Pull latest changes..."
+git pull
 
-echo "Deploying files..."
+echo "Building Astro..."
+npm run build > build.log 2>&1
+
+echo "Deploying..."
 rm -rf /var/www/landing-page/*
 cp -r dist/* /var/www/landing-page/
 

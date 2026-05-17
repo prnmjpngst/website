@@ -1,0 +1,17 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Deploy website
+        run: |
+          cd ~/document/website
+          git pull
+          ./deploy.sh
