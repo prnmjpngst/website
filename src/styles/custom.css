@@ -227,3 +227,23 @@ header {
     border-radius: 0.5rem !important;
   }
 }
+
+/* =========================
+   Mobile TOC: Fixed to bottom for easier reach
+========================= */
+
+@media (max-width: 768px) {
+  starlight-toc {
+    position: fixed !important;
+    bottom: 1rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 400px !important;
+    z-index: 100 !important;
+    background: var(--sl-color-bg-nav) !important;
+    border: 1px solid var(--sl-color-gray-5) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+}
