@@ -208,48 +208,22 @@ header {
   }
 }
 
-/* =========================
-   Table of Contents (TOC)
-   Move to bottom of screen for all screen sizes
-========================= */
+@media (max-width: 50rem) { 
+  /* Kita tambahkan detail selektor agar lebih kuat */
+  body starlight-toc .mobile-toc {
+    position: fixed !important;
+    bottom: 1rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 400px !important;
+    z-index: 1000 !important; /* Naikkan z-index untuk memastikan berada paling depan */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+  }
 
-/* Target the TOC component directly */
-starlight-toc,
-.starlight-toc,
-nav.toc {
-  display: block !important;
-  position: fixed !important;
-  bottom: 1.5rem !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: calc(100% - 2rem) !important;
-  max-width: 400px !important;
-  z-index: 1000 !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
-  border-radius: 0.75rem !important;
-  overflow: hidden !important;
-  background-color: var(--sl-color-bg-nav) !important;
-  border: 1px solid var(--sl-color-gray-5) !important;
-  backdrop-filter: blur(10px);
-}
-
-starlight-toc summary,
-.starlight-toc summary,
-nav.toc summary {
-  border-radius: 0.75rem !important;
-  padding: 0.6rem 1rem !important;
-  background-color: var(--sl-color-bg-nav) !important;
-}
-
-/* Hide the desktop TOC sidebar */
-.right-sidebar-container {
-  display: none !important;
-}
-
-/* Ensure main content takes full width when right sidebar is hidden */
-@media (min-width: 72rem) {
-  .main-pane {
-    width: 100% !important;
-    max-width: 100% !important;
+  body starlight-toc summary {
+    border-radius: 0.5rem !important;
   }
 }
