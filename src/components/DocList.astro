@@ -1,0 +1,30 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+interface Props {
+  title: string;
+  items: any[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: title,
+  }}
+>
+  {items.length > 0 ? (
+    <ul class="home-links">
+      {items.map((item) => (
+        <li>
+          <a href={`/${item.id.replace('.mdx', '')}/`}>
+            {item.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>Belum ada konten untuk kategori ini.</p>
+  )}
+</StarlightPage>

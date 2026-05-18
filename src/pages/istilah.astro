@@ -1,28 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DocList from '../components/DocList.astro';
 
 const docs = await getCollection('docs');
-
-const istilah = docs.filter((item) =>
-  item.id.startsWith('istilah/')
-);
+const items = docs.filter((item) => item.id.startsWith('istilah/'));
 ---
 
-<StarlightPage
-  frontmatter={{
-    title: 'Istilah',
-  }}
->
-  <ul>
-    {
-      istilah.map((item) => (
-        <li>
-          <a href={`/${item.id.replace('.mdx', '')}/`}>
-            {item.data.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</StarlightPage>
+<DocList title="Istilah" items={items} />

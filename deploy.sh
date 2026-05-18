@@ -7,7 +7,11 @@ cd ~/document/website
 echo "Pull latest changes..."
 git pull
 
+echo "Installing dependencies..."
+npm ci
+
 echo "Building Astro..."
+rm -rf dist
 npm run build > build.log 2>&1
 
 echo "Deploying..."

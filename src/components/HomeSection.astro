@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  items: any[];
+  moreHref: string;
+}
+
+const { title, items, moreHref } = Astro.props;
+---
+
+{items.length > 0 && (
+  <>
+    <div class="home-section">
+      <h2>{title}</h2>
+      <ul class="home-links">
+        {items.map((item) => (
+          <li>
+            <a href={`/${item.id.replace('.mdx', '')}/`}>
+              {item.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="more-link" href={moreHref}>
+        Selengkapnya →
+      </a>
+    </div>
+    <hr />
+  </>
+)}
