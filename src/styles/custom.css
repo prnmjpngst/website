@@ -211,22 +211,27 @@ header {
 /* =========================
    Editorial TOC (Override)
 ========================= */
-.editorial-toc {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--sl-color-gray-5);
+.editorial-toc,
+.editorial-toc starlight-toc,
+.editorial-toc nav {
+  margin-top: 1.5rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--sl-color-gray-5) !important;
 }
 
 /* Smaller TOC UI on mobile */
 @media (max-width: 768px) {
-  .editorial-toc {
-    font-size: 0.9rem;
-    line-height: 1.4;
+  .editorial-toc,
+  .editorial-toc starlight-toc,
+  .editorial-toc nav {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
   }
-  .editorial-toc h2 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--sl-color-gray-3);
+  .editorial-toc h2,
+  .editorial-toc summary {
+    font-size: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--sl-color-gray-3) !important;
   }
 }
