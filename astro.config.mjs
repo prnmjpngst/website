@@ -14,6 +14,9 @@ export default defineConfig({
           href: 'https://github.com/prnmjpngst',
         },
       ],
+      components: {
+        TableOfContents: './src/components/overrides/TableOfContents.astro',
+      },
 
       sidebar: [
         {

@@ -1,0 +1,10 @@
+---
+import Default from '@astrojs/starlight/components/TableOfContents.astro';
+import type { Props } from '@astrojs/starlight/props';
+
+const props = Astro.props;
+---
+
+<div class="editorial-toc">
+    <Default {...props} />
+</div>

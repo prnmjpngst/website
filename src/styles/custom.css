@@ -208,42 +208,25 @@ header {
   }
 }
 
-@media (max-width: 50rem) { 
-  /* Kita tambahkan detail selektor agar lebih kuat */
-  body starlight-toc .mobile-toc {
-    position: fixed !important;
-    bottom: 1rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: calc(100% - 2rem) !important;
-    max-width: 400px !important;
-    z-index: 1000 !important; /* Naikkan z-index untuk memastikan berada paling depan */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
-    border-radius: 0.5rem !important;
-    overflow: hidden !important;
-  }
-
-  body starlight-toc summary {
-    border-radius: 0.5rem !important;
-  }
+/* =========================
+   Editorial TOC (Override)
+========================= */
+.editorial-toc {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sl-color-gray-5);
 }
 
-/* =========================
-   Mobile TOC: Fixed to bottom for easier reach
-========================= */
-
+/* Smaller TOC UI on mobile */
 @media (max-width: 768px) {
-  starlight-toc {
-    position: fixed !important;
-    bottom: 1rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: calc(100% - 2rem) !important;
-    max-width: 400px !important;
-    z-index: 100 !important;
-    background: var(--sl-color-bg-nav) !important;
-    border: 1px solid var(--sl-color-gray-5) !important;
-    border-radius: 0.5rem !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  .editorial-toc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .editorial-toc h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--sl-color-gray-3);
   }
 }
