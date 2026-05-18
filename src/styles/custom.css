@@ -213,7 +213,10 @@ header {
    Move to bottom of screen for all screen sizes
 ========================= */
 
-body starlight-toc .mobile-toc {
+/* Target the TOC component directly */
+starlight-toc,
+.starlight-toc,
+nav.toc {
   display: block !important;
   position: fixed !important;
   bottom: 1.5rem !important;
@@ -230,7 +233,9 @@ body starlight-toc .mobile-toc {
   backdrop-filter: blur(10px);
 }
 
-body starlight-toc summary {
+starlight-toc summary,
+.starlight-toc summary,
+nav.toc summary {
   border-radius: 0.75rem !important;
   padding: 0.6rem 1rem !important;
   background-color: var(--sl-color-bg-nav) !important;
